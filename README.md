@@ -1,6 +1,6 @@
-# 🐉 Dragon Ball API - Mini Projeto
+# 🐉 Dragon Ball API  
 
-Este é um mini projeto desenvolvido para praticar o consumo de **APIs utilizando JavaScript**.
+Esta é uma atividade desenvolvida para praticar o consumo de **APIs utilizando JavaScript**.
 
 A aplicação permite que o usuário clique em um botão para **sortear um personagem aleatório de Dragon Ball**, exibindo seu **nome e imagem** na tela.
 
