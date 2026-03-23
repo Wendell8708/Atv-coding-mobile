@@ -2,7 +2,7 @@
 
 Esta é uma atividade desenvolvida para praticar o consumo de **APIs utilizando JavaScript**.
 
-A aplicação permite que o usuário clique em um botão para **sortear um personagem aleatório de Dragon Ball**, exibindo seu **nome e imagem** na tela.
+A aplicação permite que o usuário clique em um botão para **sortear personagens aleatórios de Dragon Ball**, exibindo seu **nome, ki e imagem** na tela.
 
 <img width="576" height="592" alt="image" src="https://github.com/user-attachments/assets/9eafc428-a6be-4cd5-bb40-72b4a7a36c21" />
 
@@ -30,4 +30,4 @@ A aplicação permite que o usuário clique em um botão para **sortear um perso
 ## 🌐 API utilizada
 
 Dragon Ball API
-link para acesso : https://atv-coding-wendellbarboza.netlify.app/
+link para acesso : https://atv-codingv2.netlify.app/
