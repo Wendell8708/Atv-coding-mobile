@@ -28,21 +28,44 @@ button:hover{
     transform: scale(1.05);
 }
 
+/* container dos personagens */
 #personagem{
     margin: 40px auto;
+
+    display: flex;
+    justify-content: flex-start; /* centraliza */
+    gap: 20px;
+
+    overflow-x: auto; /* permite rolar pro lado */
+    padding: 20px;
+
+    max-width: 90%;
+}
+
+/* cada personagem */
+.card{
+    min-width: 250px;
     background: rgb(223, 189, 189);
     padding: 25px;
+    margin-left:30px;
     border-radius: 12px;
-    width: 300px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    text-align:center;
 }
 
-#personagem img{
+/* imagem */
+.card img{
     width: 200px;
-    height: auto;
+    height: 400px;
     margin-top: 10px;
+    margin-left: 20px;
 }
 
-#personagem h2{
+/* nome */
+.card h2{
     margin: 10px 0;
+}
+.super{
+    border: 3px solid red;
 }
