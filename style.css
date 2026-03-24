@@ -1,71 +1,125 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #ff8c00, #ffcc00);
+/* Importando uma fonte mais "Heroica" */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --dbz-orange: #ff8c00;
+    --dbz-yellow: #ffcc00;
+    --scouter-blue: #00d4ff;
+    --scouter-red: #ff4b2b;
+    --dark: #1a1a1a;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(circle, #2c3e50, #000000); /* Fundo escuro para destacar o KI */
+    color: white;
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
-h2{
-    margin-top: 50px;
-    color: #1a1a1a;
+h2 {
+    font-family: 'Bangers', cursive; /* Fonte estilo HQ */
+    letter-spacing: 2px;
+    margin-top: 30px;
+    color: var(--dbz-yellow);
+    text-shadow: 2px 2px 0px #000;
 }
 
-button{
-    background-color: #0b3d91;
+/* Botões Estilo Scouter */
+button {
+    background: linear-gradient(45deg, #0b3d91, var(--scouter-blue));
     color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px; /* Botão arredondado fica mais moderno */
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
+    transition: 0.4s;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px var(--scouter-blue);
+    filter: brightness(1.2);
+}
+
+/* Ajuste da Câmera e Canvas */
+video, canvas {
+    border: 4px solid var(--scouter-blue);
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--scouter-blue);
+    max-width: 90%;
+    background: #000;
+}
+
+/* Container dos Personagens (Rolagem Suave) */
+#personagem {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 30px;
+    max-width: 95%;
+    margin: 20px auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dbz-orange) transparent;
+}
+
+/* Cards de Personagem */
+.card {
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.1); /* Efeito de vidro (Glassmorphism) */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: 0.3s;
 }
 
-button:hover{
-    background-color: #062c6b;
-    transform: scale(1.05);
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-/* container dos personagens */
-#personagem{
-    margin: 40px auto;
-
-    display: flex;
-    justify-content: flex-start; /* centraliza */
-    gap: 20px;
-
-    overflow-x: auto; /* permite rolar pro lado */
-    padding: 20px;
-
-    max-width: 90%;
+/* Imagem do Personagem (Sem esticar!) */
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain; /* Isso impede que a imagem fique esticada */
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.5));
 }
 
-/* cada personagem */
-.card{
-    min-width: 250px;
-    background: rgb(223, 189, 189);
-    padding: 25px;
-    margin-left:30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-
-    text-align:center;
+.card h2 {
+    font-size: 24px;
+    margin: 15px 0 5px 0;
 }
 
-/* imagem */
-.card img{
-    width: 200px;
-    height: 400px;
-    margin-top: 10px;
-    margin-left: 20px;
+.card p {
+    font-weight: bold;
+    color: #ddd;
 }
 
-/* nome */
-.card h2{
-    margin: 10px 0;
+/* Destaque para o KI mais alto */
+.super {
+    border: 3px solid var(--scouter-red) !important;
+    box-shadow: 0 0 30px rgba(255, 75, 43, 0.6);
 }
-.super{
-    border: 3px solid red;
+
+.super h2 {
+    color: var(--scouter-red);
+}
+
+/* Status de Análise */
+#status {
+    font-size: 20px;
+    margin: 20px;
+    font-weight: bold;
+    color: var(--scouter-blue);
 }
