@@ -114,3 +114,43 @@ function getDistanciaKame() {
         alert("Erro ao obter localização. O Mestre Kami está escondendo o KI!");
     });
 }
+
+
+// botaõ de instalar 
+
+let deferredPrompt;
+
+const btnInstalar = document.getElementById("btnInstalar");
+
+// inicialmente esconde o botão
+btnInstalar.style.display = "none";
+
+window.addEventListener("beforeinstallprompt", (event) => {
+
+    // impede o navegador de mostrar o aviso automático
+    event.preventDefault();
+
+    // guarda o evento
+    deferredPrompt = event;
+
+    // mostra o botão
+    btnInstalar.style.display = "block";
+});
+
+btnInstalar.addEventListener("click", async () => {
+
+    if(deferredPrompt){
+
+        deferredPrompt.prompt();
+
+        const escolha = await deferredPrompt.userChoice;
+
+        if(escolha.outcome === "accepted"){
+            console.log("Usuário instalou a PWA!");
+        }else{
+            console.log("Usuário recusou !");
+        }
+
+        deferredPrompt = null;
+    }
+});

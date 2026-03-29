@@ -123,3 +123,29 @@ video, canvas {
     font-weight: bold;
     color: var(--scouter-blue);
 }
+
+/* Botão de instalar */
+.install-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
+    
+    cursor: pointer;
+    
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.install-btn:hover{
+    background-color: #e68900;
+}
+html, body {
+  color: radial-gradient(circle, #2c3e50, #000000)
+}

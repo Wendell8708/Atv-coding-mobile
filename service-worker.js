@@ -2,14 +2,13 @@ const CACHE_NAME = "yourdbz-v1";
 
 // Lista de arquivos para funcionar Offline
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/manifest.json",
-  // Adicionei os caminhos dos seus ícones principais para garantir o visual offline
-  "/icons/AppIcons/Assets.xcassets/AppIcon.appiconset/180.png",
-  "/icons/AppIcons/Assets.xcassets/AppIcon.appiconset/1024.png"
+  "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./manifest.json",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png"
 ];
 
 // Instalação e Cache
@@ -22,7 +21,6 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Ativação: Limpa caches antigos se você mudar o CACHE_NAME para "v2"
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -38,7 +36,7 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Estratégia de busca: Tenta o Cache primeiro, se não tiver, vai na rede
+// Tenta o Cache primeiro, se não tiver, vai na rede
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
